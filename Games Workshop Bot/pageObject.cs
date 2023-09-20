@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Games_Workshop_Bot
+namespace GamesWorkshopPO
 {
-    internal class pageObject
+    public class StoreFront
     {
+        //Page Elements
+        
     }
 }

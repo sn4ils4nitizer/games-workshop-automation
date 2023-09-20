@@ -1,18 +1,21 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using BasePage;
 
 namespace Games_Workshop_Bot
 {
     public class Tests
     {
         IWebDriver driver = new ChromeDriver();
+        
 
         [SetUp]
         public void Setup()
         {
-          
-            driver.Navigate().GoToUrl("https://www.google.com");
-            driver.Manage().Window.Maximize();
+            basePage basePage = new basePage();
+            basePage.NavigateTo("https://www.games-workshop.com/en-US/Home");
+
+
         }
 
         [Test]

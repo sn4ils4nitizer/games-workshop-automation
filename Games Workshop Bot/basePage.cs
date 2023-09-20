@@ -8,14 +8,24 @@ using OpenQA.Selenium.Chrome;
 
 namespace BasePage
 {
-    internal class basePage
+    public class basePage
     {
-        IWebDriver driver = new ChromeDriver();
+       protected IWebDriver driver = new ChromeDriver();
 
         public void NavigateTo(string url)
         {
             driver.Navigate().GoToUrl(url);
         }
+
+        public void SetImplicitWait(int seconds)
+        {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
+        }
+
+        public void Click(By locator)
+        {
+            driver.FindElement(locator).Click();
+        }    
     }
 }
     
