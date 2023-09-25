@@ -1,37 +1,41 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using BasePage;
+using GamesWorkshopPO;
 
 namespace Games_Workshop_Bot
 {
     public class Tests
     {
-        IWebDriver driver = new ChromeDriver();
-        
+
+        basePage basePage = new basePage();
+        GamesWorkshop gwPO = new GamesWorkshop();
 
         [SetUp]
         public void Setup()
         {
-            basePage basePage = new basePage();
-            basePage.NavigateTo("https://www.games-workshop.com/en-US/Home");
+            
 
+            basePage.NavigateTo("https://www.games-workshop.com");
+            basePage.Maximize();
 
         }
 
         [Test]
         public void Test1()
         {
-            IWebElement ele1 = driver.FindElement(By.Name("q"));
-            ele1.SendKeys("word bearers" + Keys.Enter);
-            IWebElement ele2 = driver.FindElement(By.Id("rso"));
-            var ele2Text = ele2.Text;
-            Assert.That(ele2Text, Does.Contain("word bearers").IgnoreCase);
+            //basePage.SetImplicitWait(10);
+            basePage.WaitForElement(gwPO.rejectCookies, 10);
+            basePage.Click(gwPO.rejectCookies);
+            //basePage.SetImplicitWait(5);
+            basePage.WaitForElement(gwPO.chooseLanguage, 10);
+            basePage.Click(gwPO.chooseLanguage);
         }
 
         [TearDown]
         public void Teardown()
         {
-            driver.Close();
+            //basePage.CloseBrowser();
         }
     }
 }

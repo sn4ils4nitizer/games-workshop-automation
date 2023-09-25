@@ -102,3 +102,4 @@ C:\Users\filip\Desktop\Code Practice\Games Workshop Bot\Games Workshop Bot\obj\D
 C:\Users\filip\Desktop\Code Practice\Games Workshop Bot\Games Workshop Bot\obj\Debug\net6.0\Games Workshop Bot.pdb
 C:\Users\filip\Desktop\Code Practice\Games Workshop Bot\Games Workshop Bot\obj\Debug\net6.0\Games Workshop Bot.genruntimeconfig.cache
 C:\Users\filip\Desktop\Code Practice\Games Workshop Bot\Games Workshop Bot\obj\Debug\net6.0\ref\Games Workshop Bot.dll
+C:\Users\filip\Desktop\Code Practice\Games Workshop Bot\Games Workshop Bot\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
