@@ -7,16 +7,18 @@ using BasePage;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace GamesWorkshopPO
+namespace KTDashPageObject
 {
 
-    public class GamesWorkshop
+    public class KTDashPO
     {
         //Page Elements
-
-        //Cookies pop-up
-        public By rejectCookies = By.Id("onetrust-reject-all-handler");
-        public By chooseLanguage = By.XPath("//*[@id='country-selector']/ul/li[17]/a");
+        public By unername = By.Id("username");
+        public By password = By.Id("password");
+        public By loginBtn = By.XPath("//*[@id='navbarNav']/ul/li[3]/a");
+        public By loginBtn2 = By.XPath("/html/body/div[2]/form/button");
+        
+     
     }
 
 }

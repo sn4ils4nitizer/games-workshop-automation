@@ -2,38 +2,40 @@
 using OpenQA.Selenium.Chrome;
 using BasePage;
 using GamesWorkshopPO;
+using KTDashPageObject;
 
 namespace Games_Workshop_Bot
 {
-    public class Tests
+    public class KTDashTests
     {
 
         basePage basePage = new basePage();
-        GamesWorkshop gwPO = new GamesWorkshop();
+        KTDashPO KTPO = new KTDashPO();
 
         [SetUp]
-        public void Setup()
+        public void Setup2()
         {
-
-
-            basePage.NavigateTo("https://www.games-workshop.com");
+            basePage.NavigateTo("https://ktdash.app/");
             basePage.Maximize();
-
+       
         }
 
         [Test]
-        public void Test1()
+        public void LoginTest()
         {
-            //basePage.SetImplicitWait(10);
-            basePage.WaitForElement(gwPO.rejectCookies, 10);
-            basePage.Click(gwPO.rejectCookies);
-            //basePage.SetImplicitWait(5);
-            basePage.WaitForElement(gwPO.chooseLanguage, 10);
-            basePage.Click(gwPO.chooseLanguage);
+            basePage.Click(KTPO.loginBtn);
+            basePage.WaitForElement(KTPO.unername, 10);
+            basePage.SendText(KTPO.unername, "chaoscultist1");
+            basePage.SendText(KTPO.password, "chaoscult1");
+            basePage.Click(KTPO.loginBtn2);
         }
+        [Test]
+        public void Test2()
+        {
 
+        }
         [TearDown]
-        public void Teardown()
+        public void Teardown2()
         {
             //basePage.CloseBrowser();
         }

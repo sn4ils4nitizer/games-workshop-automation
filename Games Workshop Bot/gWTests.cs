@@ -22,7 +22,7 @@ namespace Games_Workshop_Bot
         }
 
         [Test]
-        public void Test1()
+        public void GetToGWWebsite()
         {
             //basePage.SetImplicitWait(10);
             basePage.WaitForElement(gwPO.rejectCookies, 10);
@@ -30,6 +30,8 @@ namespace Games_Workshop_Bot
             //basePage.SetImplicitWait(5);
             basePage.WaitForElement(gwPO.chooseLanguage, 10);
             basePage.Click(gwPO.chooseLanguage);
+
+            //Games Workshop website detects automation. More tests will be automated on KTDash
         }
 
         [TearDown]

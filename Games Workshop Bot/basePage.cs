@@ -25,27 +25,29 @@ namespace BasePage
             }
 
         public void WaitForElement(By locator, int seconds)
-        {
+            {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             wait.Until(ExpectedConditions.ElementIsVisible(locator));
-        }
+            }
 
         public void Maximize()
             {
-                driver.Manage().Window.Maximize();
+            driver.Manage().Window.Maximize();
             }
-        public void FindElement()
-        {
-           
-        }
         public void Click(By locator)
-        {
+            {
             driver.FindElement(locator).Click();
-        }
+            }
         public void CloseBrowser()
-        {
+            {
             driver.Quit();
-        }
+            }
+        public void SendText(By locator, string text)
+            {
+            var input = driver.FindElement(locator);
+            input.Clear();
+            input.SendKeys(text);
+            }
     }
 }
     
