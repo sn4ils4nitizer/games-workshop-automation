@@ -48,6 +48,11 @@ namespace BasePage
             input.Clear();
             input.SendKeys(text);
             }
+        public string GetText(By locator)
+        {
+            string gottenText = driver.FindElement(locator).Text;
+            return gottenText;
+        }
     }
 }
     

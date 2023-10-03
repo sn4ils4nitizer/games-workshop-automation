@@ -28,6 +28,11 @@ namespace Games_Workshop_Bot
             basePage.SendText(KTPO.unername, "chaoscultist1");
             basePage.SendText(KTPO.password, "chaoscult1");
             basePage.Click(KTPO.loginBtn2);
+            basePage.WaitForElement(KTPO.cancelInstallBtn, 10);
+            basePage.Click(KTPO.cancelInstallBtn);
+            string resultLoginTest = basePage.GetText(KTPO.titleWelcome);
+            Console.WriteLine(resultLoginTest);
+            Assert.That(resultLoginTest, Does.Contain("MY ROSTERS"));
         }
         [Test]
         public void Test2()
