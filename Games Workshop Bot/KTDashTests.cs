@@ -34,15 +34,11 @@ namespace Games_Workshop_Bot
             Console.WriteLine(resultLoginTest);
             Assert.That(resultLoginTest, Does.Contain("MY ROSTERS"));
         }
-        [Test]
-        public void Test2()
-        {
-
-        }
+      
         [TearDown]
         public void Teardown2()
         {
-            //basePage.CloseBrowser();
+            basePage.CloseBrowser();
         }
     }
 }
